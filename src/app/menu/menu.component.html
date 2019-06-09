@@ -1,0 +1,32 @@
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="[
+      {
+        outlets: {
+          outlet1: ['general'],
+          outlet2: ['general'],
+          outlet3: ['general'],
+          outlet4: ['general']
+        }
+      }
+    ]"
+  >
+    Reporte general
+  </a>
+  <a
+    mat-tab-link
+    [routerLink]="[
+      {
+        outlets: {
+          outlet1: ['humidity'],
+          outlet2: ['humidity'],
+          outlet3: ['humidity'],
+          outlet4: ['humidity']
+        }
+      }
+    ]"
+  >
+    Humedad
+  </a>
+</nav>

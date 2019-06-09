@@ -1,0 +1,236 @@
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark unique-color"
+  [containerInside]="false"
+>
+  <!-- Navbar brand routerLink="/" -->
+  <!---
+  <mdb-navbar-brand
+    ><a class="navbar-brand" routerLink="/">SR</a></mdb-navbar-brand
+    > -->
+
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/">
+      <img [src]="image" height="40" alt="" />
+    </a>
+  </mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect
+          >Inicio<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Funcionamiento</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons socialnet">
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.facebook.com/Smart-Radix-Oaxaca-386544495283701/?modal=admin_todo_tour">
+          <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <div *ngIf="!userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['signup'],
+                        outlet2: ['signup'],
+                        outlet3: ['signup'],
+                        outlet4: ['signup']
+                      }
+                    }
+                  ]"
+                  >Registrarse</a
+                >
+              </div>
+              <div *ngIf="!userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['login'],
+                        outlet2: ['login'],
+                        outlet3: ['login'],
+                        outlet4: ['login']
+                      }
+                    }
+                  ]"
+                  >Iniciar sesión</a
+                >
+              </div>
+              <div class="divider dropdown-divider"></div>
+              <!--
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['reports'],
+                        outlet2: ['reports'],
+                        outlet3: ['reports'],
+                        outlet4: ['reports']
+                      }
+                    }
+                  ]"
+                  >Reportes</a
+                >
+              </div>
+            -->
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['general'],
+                        outlet2: ['general'],
+                        outlet3: ['general'],
+                        outlet4: ['general']
+                      }
+                    }
+                  ]"
+                  >Reporte general</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['reports'],
+                        outlet2: ['reports'],
+                        outlet3: ['reports'],
+                        outlet4: ['reports']
+                      }
+                    }
+                  ]"
+                  >Humedad</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['envhumidity'],
+                        outlet2: ['envhumidity'],
+                        outlet3: ['envhumidity'],
+                        outlet4: ['envhumidity']
+                      }
+                    }
+                  ]"
+                  >Humedad del ambiente</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['envtemperature'],
+                        outlet2: ['envtemperature'],
+                        outlet3: ['envtemperature'],
+                        outlet4: ['envtemperature']
+                      }
+                    }
+                  ]"
+                  >Temperatura del ambiente</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['table'],
+                        outlet2: ['table'],
+                        outlet3: ['table'],
+                        outlet4: ['table']
+                      }
+                    }
+                  ]"
+                  >Ver detalles</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="[
+                    {
+                      outlets: {
+                        outlet1: ['createreport'],
+                        outlet2: ['createreport'],
+                        outlet3: ['createreport'],
+                        outlet4: ['createreport']
+                      }
+                    }
+                  ]"
+                  >CR</a
+                >
+              </div>
+
+              <div *ngIf="userIsAuthenticated">
+                <button class="dropdown-item" (click)="onLogout()">
+                  Cerrar sesión
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->
+
+<!--
+    <li [routerLink]="[{ outlets: { outlet1: ['login'] } }]" >
+      <a>Prueba ir a login</a>
+    </li>
+  -->
+<!--
+<mat-toolbar color="primary">
+  <span><a routerLink="/">MyMessages</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>
+
+-->

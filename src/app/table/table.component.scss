@@ -1,0 +1,44 @@
+table {
+  width: 80%;
+  margin: auto;
+}
+table tr:hover {background-color: #ddd;}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+div {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+mat-card {
+  margin: 1rem auto;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+#buttonDiv {
+  align-content: flex-end;
+}

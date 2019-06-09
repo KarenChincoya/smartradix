@@ -1,0 +1,28 @@
+<h1>Reporte de temperatura del ambiente</h1>
+
+<!--Email and passowrd
+<mat-card>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email/>
+      <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+    </mat-form-field>
+    <div id="buttonDiv">
+      <button mat-raised-button type="submit" color="primary" *ngIf="!isLoading">Login</button>
+    </div>
+  </form>
+</mat-card>
+
+-->
+<div style="display: block">
+  <canvas mdbChart
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+  </canvas>
+</div>

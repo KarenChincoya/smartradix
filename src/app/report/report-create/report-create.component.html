@@ -1,0 +1,29 @@
+<!--Email and passowrd-->
+<mat-card>
+  <form (submit)="onCreate(reportForm)" #reportForm="ngForm">
+    <mat-form-field>
+      <input matInput name="sensor" ngModel type="text" placeholder="sensor" #sensorInput="ngModel" required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="humidity" ngModel type="text" placeholder="humidity" #humidityInput="ngModel" required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="environmentHumidity" ngModel type="text" placeholder="environment_humidity" #environmentHumidityInput="ngModel" required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="environmentTemperature" ngModel type="text" placeholder="environmentTemperature" #environmentTemperatureInput="ngModel" required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="picker" ngModel [matDatepicker]="picker" placeholder="Choose a date" #date="ngModel" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="hour" ngModel type="text" placeholder="hour" #hourInput="ngModel" required/>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="accent">Crear</button>
+  </form>
+</mat-card>
+
