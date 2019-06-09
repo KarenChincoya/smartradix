@@ -66,9 +66,6 @@ import { SafePipeModule } from 'safe-pipe';
     HttpClientModule,
     AngularMaterialModule,
     AuthModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDMfDEUMynpRgojUzS6rV7ziCRNmpeYi84'
-    }),
     SafePipeModule
   ],
   providers: [
